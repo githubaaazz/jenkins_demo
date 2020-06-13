@@ -35,6 +35,10 @@ public class UserController {
         map1.put("userId",1002);
         map1.put("userName","zhangsan1");
         userMapList.add(map1);
+        Map map2 = new HashMap();
+        map2.put("userId",1003);
+        map2.put("userName","zhangsan2");
+        userMapList.add(map2);
         model.addAttribute("userMapList",userMapList);
         return "list";
     }
