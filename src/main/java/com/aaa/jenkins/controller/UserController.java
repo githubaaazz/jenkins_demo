@@ -1,5 +1,6 @@
 package com.aaa.jenkins.controller;
 
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,7 @@ public class UserController {
      */
     @RequestMapping("list")
     public String list(Model model){
+
         List<Map> userMapList = new ArrayList<>();
         Map map = new HashMap();
         map.put("userId",1001);
