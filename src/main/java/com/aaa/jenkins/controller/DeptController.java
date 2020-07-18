@@ -1,6 +1,8 @@
 package com.aaa.jenkins.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -15,7 +17,7 @@ import java.util.Map;
  * createTime:2020/7/18 11:36
  * version:1.0.0
  */
-@RestController
+@Controller
 @RequestMapping("dept")
 public class DeptController {
 
@@ -23,6 +25,7 @@ public class DeptController {
      * 模拟部门列表
      * @return
      */
+    @ResponseBody
     @RequestMapping("list")
     public Object listDept(){
         List<Map> mapList =new ArrayList<>();
