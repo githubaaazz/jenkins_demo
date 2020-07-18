@@ -1,6 +1,7 @@
 package com.aaa.jenkins.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,9 +26,8 @@ public class DeptController {
      * 模拟部门列表
      * @return
      */
-    @ResponseBody
     @RequestMapping("list")
-    public Object listDept(){
+    public Object listDept(Model model){
         List<Map> mapList =new ArrayList<>();
         Map map1 =new HashMap();
         map1.put("deptNo",10);
@@ -39,6 +39,7 @@ public class DeptController {
         map2.put("dname","sales");
         map2.put("loc","shanghai");
         mapList.add(map2);
-        return mapList;
+        model.addAttribute("deptList",mapList);
+        return "deptlist";
     }
 }
